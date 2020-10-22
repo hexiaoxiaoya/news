@@ -1,10 +1,7 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-			首页做计算机
-		</view>
+		<!-- 自定义组件：无需引入组件注意 -->
+		<navbar></navbar>
 	</view>
 </template>
 
@@ -24,7 +21,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	.content {
 		display: flex;
 		flex-direction: column;
