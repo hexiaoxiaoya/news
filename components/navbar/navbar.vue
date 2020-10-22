@@ -6,7 +6,9 @@
 			<!-- 导航栏 -->
 			<view class="navbar-content" :style="{height:navBarHeight+'px',width:windowWidth+'px'}">
 				<view class="navbar-search">
-					<view class="navbar-search-icon"></view>
+					<view class="navbar-search-icon">
+						 <uni-icons type="search" size="16" color="#999"></uni-icons>
+					</view>
 					<view class="navbar-search-text">这里点击搜索</view>
 				</view>
 			</view>
@@ -75,9 +77,9 @@
 					border-radius: 30px;
 					background-color: #FFFFFF;
 					.navbar-search-icon {
-						width: 10px;
-						height: 10px;
-						background-color: red;
+						// width: 10px;
+						// height: 10px;
+						// background-color: red;
 						margin-right: 10px;
 					}
 					.navbar-search-text {

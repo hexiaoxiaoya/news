@@ -60,9 +60,6 @@
   background-color: #FFFFFF;
 }
 .navbar .navbar-fixed .navbar-content .navbar-search .navbar-search-icon {
-  width: 10px;
-  height: 10px;
-  background-color: red;
   margin-right: 10px;
 }
 .navbar .navbar-fixed .navbar-content .navbar-search .navbar-search-text {
