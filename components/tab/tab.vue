@@ -1,0 +1,77 @@
+<template>
+	<view class="tab ha">
+		<scroll-view scroll-x class="tab-scroll">
+			<view class="tab-scroll-box">
+				<view class="tab-scroll-item" v-for="item in tablist" :key="item.id">{{item.name}}</view>
+			</view>
+		</scroll-view>
+		<view class="tab-icon">
+			<uni-icons type="gear" size="26" color="#666"></uni-icons>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				tablist:[
+					{id:1,name:"科技"},
+					{id:2,name:"金融"},
+					{id:3,name:"医疗"},
+					{id:4,name:"游戏"},
+					{id:5,name:"美容"},
+					{id:6,name:"资讯"},
+					{id:7,name:"时尚"},
+					{id:8,name:"游戏"},
+					{id:9,name:"留学"},
+				]
+			};
+		}
+	}
+</script>
+
+<style lang="scss">
+	.tab {
+		display: flex;
+		width: 100%;
+		box-sizing: border-box;
+		background-color: #FFFFFF;
+		border-bottom: 1px #f5f5f5 solid;
+		.tab-scroll {
+			flex: 1;
+			overflow: hidden;
+			box-sizing: border-box;
+			.tab-scroll-box{
+				display: flex;
+				align-items: center;
+				flex-wrap: nowrap;
+				height: 45px;
+				box-sizing: border-box;
+				.tab-scroll-item {
+					flex-shrink: 0;
+					padding: 0 10px;
+					color: #333;
+					font-size: 14px;
+				}
+			}
+		}
+		.tab-icon {
+			box-sizing: border-box;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 45px;
+			&::after{
+				content: '';
+				position: absolute;
+				top: 12px;
+				bottom: 12px;
+				left: 0;
+				width: 1px;
+				background-color: #ddd;
+			}
+		}
+	}
+</style>
