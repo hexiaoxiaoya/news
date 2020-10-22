@@ -16,15 +16,6 @@
             
         }
         ,{
-            "path" : "pages/follow/follow",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
             "path" : "pages/my/my",
             "style" :                                                                                    
             {
