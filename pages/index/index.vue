@@ -2,7 +2,7 @@
 	<view class="content">
 		<!-- 自定义组件：无需引入组件注意 -->
 		<navbar></navbar>
-		<tab></tab>
+		<tab :list="list"></tab>
 	</view>
 </template>
 
@@ -10,10 +10,22 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				list:null
 			}
 		},
 		onLoad() {
+			this.list = [
+					{id:1,name:"科技"},
+					{id:2,name:"金融"},
+					{id:3,name:"医疗"},
+					{id:4,name:"游戏"},
+					{id:5,name:"美容"},
+					{id:6,name:"资讯"},
+					{id:7,name:"时尚"},
+					{id:8,name:"游戏"},
+					{id:9,name:"留学"},
+				]
 
 		},
 		methods: {

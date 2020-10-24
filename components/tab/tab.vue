@@ -2,7 +2,7 @@
 	<view class="tab ha">
 		<scroll-view scroll-x class="tab-scroll">
 			<view class="tab-scroll-box">
-				<view class="tab-scroll-item" v-for="item in tablist" :key="item.id">{{item.name}}</view>
+				<view class="tab-scroll-item" v-for="item in list" :key="item.id">{{item.name}}</view>
 			</view>
 		</scroll-view>
 		<view class="tab-icon">
@@ -13,19 +13,14 @@
 
 <script>
 	export default {
+		props:{
+			list:{
+				type:Array
+			}
+		},
 		data() {
 			return {
-				tablist:[
-					{id:1,name:"科技"},
-					{id:2,name:"金融"},
-					{id:3,name:"医疗"},
-					{id:4,name:"游戏"},
-					{id:5,name:"美容"},
-					{id:6,name:"资讯"},
-					{id:7,name:"时尚"},
-					{id:8,name:"游戏"},
-					{id:9,name:"留学"},
-				]
+			
 			};
 		}
 	}
