@@ -1,8 +1,11 @@
 <template>
-	<view class="content">
+	<view class="home">
 		<!-- 自定义组件：无需引入组件注意 -->
 		<navbar></navbar>
 		<tab :list="list" v-on:tabclick="tabclick"></tab>
+		<list-scroll>
+			<list-card v-for="item in 20"></list-card>
+		</list-scroll>
 	</view>
 </template>
 
@@ -38,29 +41,15 @@
 </script>
 
 <style lang="scss">
-	.content {
+	page {
+		height: 100%;
+		display: flex;
+	}
+	.home{
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+		flex: 1;
+		overflow: hidden;
+		
 	}
 </style>
