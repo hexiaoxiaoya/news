@@ -2,7 +2,8 @@
 	<view class="tab ha">
 		<scroll-view scroll-x class="tab-scroll">
 			<view class="tab-scroll-box">
-				<view class="tab-scroll-item" v-for="item in list" :key="item.id">{{item.name}}</view>
+				<view class="tab-scroll-item" v-for="(item,index) in list" :key="item.id"
+				@click="clicktab(item,index)" :class="{active:activeIndex === index}">{{item.name}}</view>
 			</view>
 		</scroll-view>
 		<view class="tab-icon">
@@ -18,9 +19,18 @@
 				type:Array
 			}
 		},
+		methods:{
+			clicktab(item,index) {
+				this.activeIndex = index
+				this.$emit('tabclick',{
+					data:item,
+					index
+				})
+			}
+		},
 		data() {
 			return {
-			
+				activeIndex:0
 			};
 		}
 	}
@@ -48,6 +58,9 @@
 					padding: 0 10px;
 					color: #333;
 					font-size: 14px;
+					&.active{
+						color: $base-color;
+					}
 				}
 			}
 		}

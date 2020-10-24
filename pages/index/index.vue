@@ -2,7 +2,7 @@
 	<view class="content">
 		<!-- 自定义组件：无需引入组件注意 -->
 		<navbar></navbar>
-		<tab :list="list"></tab>
+		<tab :list="list" v-on:tabclick="tabclick"></tab>
 	</view>
 </template>
 
@@ -14,6 +14,7 @@
 				list:null
 			}
 		},
+		
 		onLoad() {
 			this.list = [
 					{id:1,name:"科技"},
@@ -29,7 +30,9 @@
 
 		},
 		methods: {
-
+			tabclick({item,index}){
+				console.log(index)
+			}
 		}
 	}
 </script>
