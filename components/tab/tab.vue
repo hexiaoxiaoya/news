@@ -17,6 +17,15 @@
 		props:{
 			list:{
 				type:Array
+			},
+			tabindex:{
+				type:Number,
+				default:0
+			}
+		},
+		watch:{
+			tabindex(newValue){
+				this.activeIndex = newValue
 			}
 		},
 		methods:{

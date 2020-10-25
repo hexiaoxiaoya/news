@@ -2,9 +2,9 @@
 	<view class="home">
 		<!-- 自定义组件：无需引入组件注意 -->
 		<navbar></navbar>
-		<tab :list="list" v-on:tabclick="tabclick"></tab>
+		<tab :list="list" v-on:tabclick="tabclick" :tabindex="tabindex"></tab>
 		<view class="home-list">
-			<list-swiper :tab="list"></list-swiper>
+			<list-swiper :tab="list" @change="change" :activeIndex="activeIndex"></list-swiper>
 		</view>
 	</view>
 </template>
@@ -14,7 +14,9 @@
 		data() {
 			return {
 				title: 'Hello',
-				list: null
+				list: null,
+				tabindex:0,
+				activeIndex:0
 			}
 		},
 
@@ -63,7 +65,10 @@
 				item,
 				index
 			}) {
-				console.log(index)
+				this.activeIndex = index
+			},
+			change(current) {
+				this.tabindex = current
 			}
 		}
 	}
