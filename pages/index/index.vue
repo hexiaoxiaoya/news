@@ -4,7 +4,7 @@
 		<navbar></navbar>
 		<tab :list="list" v-on:tabclick="tabclick"></tab>
 		<list-scroll>
-			<list-card v-for="item in 20"></list-card>
+			<list-card v-for="item in 20" mode="base"></list-card>
 		</list-scroll>
 	</view>
 </template>

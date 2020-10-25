@@ -1,6 +1,7 @@
 <template>
 	<view>
-		<view class="list-card">
+		<!-- 基础卡片 -->
+		<view class="list-card" v-if="mode === 'base'">
 			<view class="list-card-img">
 				<image src="/static/home-active.png" mode="aspectFill"></image>
 			</view>
@@ -19,11 +20,59 @@
 				</view>
 			</view>
 		</view>
+		<!-- 多图模式 -->
+		<view class="list-card mode-colomn" v-if="mode === 'middle'">
+			<view class="list-card-content">
+				<view class="list-card-content-title">
+					<text>
+						前端前端前端前端前端前端前端前端前端前端前端前端
+						前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+				    </text>
+				</view>
+				<view class="list-card-img">
+					<view v-for="item in 3" :key="item" class="list-card-image-item">
+						<image src="/static/home-active.png" mode="aspectFill"></image>
+					</view>
+				</view>
+				<view class="list-card-content-des">
+					<view class="list-card-content-des-label">
+						<view class="list-card-content-des-label-item">前端</view>
+					</view>
+					<view class="list-card-content-des-browser">129浏览</view>
+				</view>
+			</view>
+		</view>
+		<!-- 大图模式 -->
+			<view class="list-card mode-bigimg" v-if="mode === 'big'">
+				<view class="list-card-img">
+						<image src="/static/home-active.png" mode="aspectFill"></image>
+				</view>
+				<view class="list-card-content">
+					<view class="list-card-content-title">
+						<text>
+							前端前端前端前端前端前端前端前端前端前端前端前端
+							前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端
+					    </text>
+					</view>
+					<view class="list-card-content-des">
+						<view class="list-card-content-des-label">
+							<view class="list-card-content-des-label-item">前端</view>
+						</view>
+						<view class="list-card-content-des-browser">129浏览</view>
+					</view>
+				</view>
+			</view>
 	</view>
 </template>
 
 <script>
 	export default {
+		props:{
+			mode:{
+				type:String,
+				default:"base"
+			}
+		},
 		data() {
 			return {
 				
@@ -91,6 +140,50 @@
 				color: #999;
 				line-height: 1.5;
 			}
+		}
+	}
+	&.mode-colomn{
+		.list-card-content{
+			width: 100%;
+			padding-left: 0;
+		}
+		.list-card-img{
+			display: flex;
+			margin-top: 10px;
+			width: 100%;
+			height: 70px;
+			.list-card-image-item{
+				margin-left: 10px;
+				width: 100%;
+				border-radius: 5px;
+				overflow: hidden;
+				&:first-child {
+					margin-left: 0;
+				}
+				image{
+					width: 100%;
+					height: 100%;
+				}
+			}	
+			}
+			.list-card-content-des{
+				margin-top: 10px;
+		}
+	}
+	&.mode-bigimg{
+		flex-direction: column;
+		.list-card-img{
+			width: 100%;
+			height: 100px;
+		}
+		.list-card-content{
+			padding-left: 0;
+			margin-top: 10px;
+		}
+		.list-card-content-des{
+			display: flex;
+			align-items: center;
+			margin-top: 10px;
 		}
 	}
 }
